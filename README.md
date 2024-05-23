@@ -1,4 +1,4 @@
-# Music Player
+# Football Statistics
 Приложение для просмотра статистики
 
 ## Tech Stack
