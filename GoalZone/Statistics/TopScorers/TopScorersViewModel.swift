@@ -8,13 +8,17 @@
 import Foundation
 import Combine
 
+//Observer
 final class TopScorersViewModel: ObservableObject {
   
     var leagueID: Int
     var season: Int
+    let networkService: StandingService
+    //DI
     init(leagueID: Int, season: Int) {
         self.leagueID = leagueID
         self.season = season
+        self.networkService = StandingService()
     }
     
     @Published var topScorers: [TopScorer] = []
@@ -25,7 +29,8 @@ final class TopScorersViewModel: ObservableObject {
     private var cancellables: Set<AnyCancellable> = []
     
     func fetchPlayers(statType: StatType) {
-        StandingService.shared.fetchTopScorers(param: statType.rawValue, leagueID: leagueID, season: season)
+        
+        networkService.fetchTopScorers(param: statType.rawValue, leagueID: leagueID, season: season)
             .receive(on: DispatchQueue.main)
             .sink { completion in
                 switch completion {

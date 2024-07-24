@@ -8,14 +8,18 @@
 import Foundation
 import Combine
 
+//Observer
 final class MatchDetailViewModel: ObservableObject {
     @Published var homeTeamStatistics: TeamStatistics?
     @Published var awayTeamStatistics: TeamStatistics?
-    
+    let networkService: StandingService
     private var cancellables: Set<AnyCancellable> = []
-    
+    //DI
+    init() {
+        self.networkService = StandingService()
+    }
     func fetchMatchStatistics(fixtureID: Int) {
-        StandingService.shared.fetchMatchStatistics(fixtureID: fixtureID)
+        networkService.fetchMatchStatistics(fixtureID: fixtureID)
             .receive(on: DispatchQueue.main)
             .sink { completion in
                 switch completion {

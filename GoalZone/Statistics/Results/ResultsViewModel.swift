@@ -8,13 +8,17 @@
 import Foundation
 import Combine
 
+//Observer
 final class ResultsViewModel: ObservableObject {
     
     var leagueID: Int
     var season: Int
+    let networkService: StandingService
+    //DI
     init(leagueID: Int, season: Int) {
         self.leagueID = leagueID
         self.season = season
+        self.networkService = StandingService()
     }
 
     @Published var fixtures: [Fixture] = []
@@ -22,7 +26,7 @@ final class ResultsViewModel: ObservableObject {
     private var cancellables: Set<AnyCancellable> = []
 
     func fetchFixtures() {
-        StandingService.shared.fetchMatches(leagueID: leagueID, param: "season=\(season)")
+        networkService.fetchMatches(leagueID: leagueID, param: "season=\(season)")
             .receive(on: DispatchQueue.main)
             .sink { completion in
                 switch completion {

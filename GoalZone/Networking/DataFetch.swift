@@ -11,8 +11,7 @@ import Combine
 
 
 final class StandingService {
-    
-    static let shared = StandingService()
+      
     private let headers: HTTPHeaders = [
         "X-RapidAPI-Key": "YOUR API KEY",
         "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com"

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		651546D12C51629200F4969B /* Extension + Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651546D02C51629200F4969B /* Extension + Color.swift */; };
 		6534ABBE2BF956C500F50B33 /* TopScoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6534ABBD2BF956C500F50B33 /* TopScoresView.swift */; };
 		6534ABC42BFB980D00F50B33 /* MatchDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6534ABC32BFB980D00F50B33 /* MatchDetailsView.swift */; };
 		6534ABC62BFB9E1700F50B33 /* FixtureStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6534ABC52BFB9E1700F50B33 /* FixtureStatistics.swift */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		102014241132BB5C732ADCAA /* Pods_GoalZone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoalZone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		445DF8F9FD92518BD72EB9BE /* Pods-GoalZone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoalZone.release.xcconfig"; path = "Target Support Files/Pods-GoalZone/Pods-GoalZone.release.xcconfig"; sourceTree = "<group>"; };
+		651546D02C51629200F4969B /* Extension + Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + Color.swift"; sourceTree = "<group>"; };
 		6534ABBD2BF956C500F50B33 /* TopScoresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopScoresView.swift; sourceTree = "<group>"; };
 		6534ABC32BFB980D00F50B33 /* MatchDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailsView.swift; sourceTree = "<group>"; };
 		6534ABC52BFB9E1700F50B33 /* FixtureStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureStatistics.swift; sourceTree = "<group>"; };
@@ -82,6 +84,14 @@
 				445DF8F9FD92518BD72EB9BE /* Pods-GoalZone.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		651546CF2C51627000F4969B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				651546D02C51629200F4969B /* Extension + Color.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		6534ABCB2BFD363800F50B33 /* UpcomingMatches */ = {
@@ -180,6 +190,7 @@
 		6575727B2BEFE5A800A46DD1 /* GoalZone */ = {
 			isa = PBXGroup;
 			children = (
+				651546CF2C51627000F4969B /* Extension */,
 				6575728A2BEFE5C000A46DD1 /* Model */,
 				6575728B2BEFE5CB00A46DD1 /* Networking */,
 				6534ABCF2BFD36E300F50B33 /* MainTabView */,
@@ -371,6 +382,7 @@
 				6534ABD42BFE36D800F50B33 /* MatchDetailViewModel.swift in Sources */,
 				6534ABD72BFE374400F50B33 /* StandingViewModel.swift in Sources */,
 				6537C4BC2BF55EE800E0E3F9 /* LeagueSelectionView.swift in Sources */,
+				651546D12C51629200F4969B /* Extension + Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
