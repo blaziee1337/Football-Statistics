@@ -7,6 +7,7 @@
 
 import Foundation
 
+//Observer
 final class LeagueSelectionViewModel: ObservableObject {
     
     @Published var selectedLogo: String = ""

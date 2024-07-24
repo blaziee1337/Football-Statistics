@@ -119,9 +119,11 @@ struct TabButton: View {
 private func leagueGradient(for leagueName: String) -> some View {
     switch leagueName {
     case "Premier League":
-        return LinearGradient(gradient: Gradient(colors: [Color(red: 56/255, green: 19/255, blue: 61/255), Color.purple, Color(red: 56/255, green: 19/255, blue: 61/255)]), startPoint: .leading, endPoint: .trailing)
+        return LinearGradient(gradient: Gradient(colors: [Color.gradientStartEPL, Color.gradientMiddleEPL, Color.gradientEndEPL]), startPoint: .leading, endPoint: .trailing)
+
     case "Bundesliga":
-        return LinearGradient(gradient: Gradient(colors: [Color(red: 127/255, green: 35/255, blue: 33/255), Color.red.opacity(0.8), Color(red: 127/255, green: 35/255, blue: 33/255)]), startPoint: .leading, endPoint: .trailing)
+        return LinearGradient(gradient: Gradient(colors: [Color.gradientStartBL, Color.gradientMiddleBL, Color.gradientEndBL]), startPoint: .leading, endPoint: .trailing)
+       
     default:
         return LinearGradient(gradient: Gradient(colors: [Color.gray, Color.black]), startPoint: .topLeading, endPoint: .bottomTrailing)
     }

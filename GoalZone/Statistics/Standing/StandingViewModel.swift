@@ -8,19 +8,23 @@
 import Foundation
 import Combine
 
+//Observer
 final class StandingViewModel: ObservableObject {
     var leagueID: Int
     var season: Int
+    let networkService: StandingService
+    //DI
     init(leagueID: Int, season: Int) {
         self.leagueID = leagueID
         self.season = season
+        self.networkService = StandingService()
     }
 
     @Published var standings: [Standing] = []
     private var cancellables: Set<AnyCancellable> = []
     
    func fetchStandings() {
-       StandingService.shared.fetchStanding(leagueID: leagueID, season: season)
+       networkService.fetchStanding(leagueID: leagueID, season: season)
       
             .receive(on: DispatchQueue.main)
             .sink { completion in
